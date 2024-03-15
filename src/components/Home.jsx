@@ -1,19 +1,13 @@
-/**
- * Landing page for the app with route to shop page
- *
- * @format
- */
-
 /** @format */
 
-/* import { useState } from "react"; */
 import { Link } from "react-router-dom";
+
 import "../styles/App.css";
 
 function Home() {
   return (
     <>
-      <div>
+      <div className="main-content">
         <a href="" target="_blank">
           <img className="logo" alt="Logo will go here" />
         </a>

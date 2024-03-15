@@ -4,6 +4,7 @@
  * @format
  */
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import "../styles/App.css";
 
 function Shop() {
@@ -11,17 +12,19 @@ function Shop() {
 
   return (
     <>
-      <div>
-        <a href="" target="_blank">
-          <img className="logo" alt="Logo will go here" />
-        </a>
+      <div className="shopContainer">
+        <h1>The Store page!</h1>
+        <div className="card">
+          <button onClick={() => setCount((count) => count + 1)}>Add Gi</button>
+          <button onClick={() => setCount((count) => count + 1)}>
+            Add Rashguard
+          </button>
+          <button>You have {count} items in your cart</button>
+        </div>
+        <div>
+          <Link to="/">Click here to go back Home</Link>
+        </div>
       </div>
-      <h1>The Store page!</h1>
-      <div className="card"></div>
-      <button onClick={() => setCount((count) => count + 1)}>
-        Buy my shit
-      </button>
-      <button>You have {count} items in your cart</button>
     </>
   );
 }
