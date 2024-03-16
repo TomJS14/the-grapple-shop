@@ -21,17 +21,13 @@ const Navbar = () => {
   };
 
   const renderNavLinks = () => {
-    const listClassName = isMobile ? "nav__list" : "nav__list__web";
+    /* Dynamically render links and classnames for mobile vs web */
+    const listClassName = isMobile ? "nav__list_mobile" : "nav__list__web";
     const linkClassName = "nav__link";
     const buttonClassName = "nav__cta";
 
     return (
       <ul className={listClassName}>
-        <li>
-          <NavLink to="/" className={linkClassName} onClick={closeMobileMenu}>
-            Home
-          </NavLink>
-        </li>
         <li>
           <NavLink to="/" className={linkClassName} onClick={closeMobileMenu}>
             Home
@@ -46,10 +42,15 @@ const Navbar = () => {
             Shop
           </NavLink>
         </li>
+        <li>
+          <NavLink to="/" className={linkClassName} onClick={closeMobileMenu}>
+            My Cart
+          </NavLink>
+        </li>
 
         <li>
           <NavLink
-            to="/get-started"
+            to="*"
             className={`${linkClassName} ${buttonClassName}`}
             onClick={closeMobileMenu}
           >
@@ -60,19 +61,23 @@ const Navbar = () => {
     );
   };
 
+  /* Return JSX elements */
+
   return (
     <header className="header">
       <nav className="nav container">
         <NavLink to="/" className="nav__logo">
-          Navigation Bar
+          Grapple Shop
         </NavLink>
 
+        {/* Render hamburger menu if Mobile */}
         {isMobile && (
           <div className="nav__toggle" id="nav-toggle" onClick={toggleMenu}>
             <IoMenu />
           </div>
         )}
 
+        {/* If mobile, add show-menu class to the list and render */}
         {isMobile ? (
           <div
             className={`nav__menu  ${isMenuOpen ? "show-menu" : ""}`}
@@ -84,7 +89,8 @@ const Navbar = () => {
             </div>
           </div>
         ) : (
-          renderNavLinks()
+          /* Otherwise, render nav links normally */
+          renderNavLinks
         )}
       </nav>
     </header>
