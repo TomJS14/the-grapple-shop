@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { IoClose, IoMenu } from "react-icons/io5";
+import { IoMenu } from "react-icons/io5";
 import { useMediaQuery } from "react-responsive";
 import "../styles/Navbar.css";
 
@@ -16,7 +16,7 @@ const Navbar = () => {
 
   const closeMobileMenu = () => {
     if (isMobile) {
-      setIsMenuOpen(false);
+      setIsMenuOpen(!isMenuOpen);
     }
   };
 
@@ -54,7 +54,7 @@ const Navbar = () => {
             className={`${linkClassName} ${buttonClassName}`}
             onClick={closeMobileMenu}
           >
-            Get Started
+            My Account
           </NavLink>
         </li>
       </ul>
@@ -62,7 +62,6 @@ const Navbar = () => {
   };
 
   /* Return JSX elements */
-
   return (
     <header className="header">
       <nav className="nav container">
@@ -84,13 +83,13 @@ const Navbar = () => {
             id="nav-menu"
           >
             {renderNavLinks()}
-            <div className="nav__close" id="nav-close" onClick={toggleMenu}>
+            {/* <div className="nav__close" id="nav-close" onClick={toggleMenu}>
               <IoClose />
-            </div>
+            </div> */}
           </div>
         ) : (
           /* Otherwise, render nav links normally */
-          renderNavLinks
+          renderNavLinks()
         )}
       </nav>
     </header>

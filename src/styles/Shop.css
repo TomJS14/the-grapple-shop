@@ -1,0 +1,29 @@
+/** @format */
+
+.main-content {
+  outline: 1px solid yellow;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.shopContainer {
+  outline: 1px solid red;
+  align-self: center;
+  position: relative;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.shopCard {
+  padding: 2em;
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.itemImage {
+  width: 50px;
+}

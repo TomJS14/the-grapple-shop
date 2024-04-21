@@ -20,7 +20,7 @@
   --first-color: hsl(28, 88%, 62%);
   --title-color: hsl(0, 0%, 95%);
   --text-color: hsl(0, 0%, 75%);
-  --body-color: hsl(0, 0%, 6%);
+  --body-color: #242424;
   --h2-font-size: 1.25rem;
   --small-font-size: 0.813rem;
   --font-semi-bold: 600;
@@ -40,8 +40,9 @@ body {
   font-family: var(--body-font);
   margin: 0;
   display: flex;
+
   place-items: center;
-  min-width: 320px;
+  min-width: 100vw; /* 320px */
   min-height: 100vh;
 }
 
